@@ -5,7 +5,7 @@ Ans: The fundamental feature of a Recurrent Neural Network (RNN) is that the net
 
 In sequential tasks such as natural language and speech processing, there is always dependence of present input data upon the previous applied inputs. Task of RNNs is to find the relationship between current input and the previous applied inputs. In theory RNNs can make use of information sequence of any arbitrarily length, but in practice they are limited to looking back only a few steps.
 
-rnn_orig.png
+
 
 The above figure shows a RNN being unfolded into a full network. By unfolding we simply mean that we are repeating the same layer structure of network for the complete sequence. Xt is the input at time step t. Xt is a vector of any size N. A is the hidden state at time step t. It’s the “memory” of the network. It is calculated based on the previous hidden state and the input at the current step.
 
@@ -46,19 +46,19 @@ Ans: LSTM peephole conncections is one of improvements for classic LSTM network.
 
 Difference between LSTM peephole conncections and classic LSTM
 We should compare them with their formulas.
-image.png
+
 
 We can find the main differences between classic LSTM and LSTM with peephole connections are in three gates.
 LSTM with peephole connections add hidden state Ct to three gates in classic lstm.
 We also can find the detail in tensorflow source code.
-image-2.png
+
 
 7. Bidirectional RNNs
 Ans: Bidirectional recurrent neural networks(RNN) are really just putting two independent RNNs together. The input sequence is fed in normal time order for one network, and in reverse time order for another. The outputs of the two networks are usually concatenated at each time step, though there are other options, e.g. summation.
 
 This structure allows the networks to have both backward and forward information about the sequence at every time step. The concept seems easy enough. But when it comes to actually implementing a neural network which utilizes bidirectional structure, confusion arises…
 
-image.png
+
 
 8. Explain BiLSTM
 Ans: A Bidirectional LSTM, or biLSTM, is a sequence processing model that consists of two LSTMs: one taking the input in a forward direction, and the other in a backwards direction. BiLSTMs effectively increase the amount of information available to the network, improving the context available to the algorithm (e.g. knowing what words immediately follow and precede a word in a sentence). image.png
@@ -66,4 +66,4 @@ Ans: A Bidirectional LSTM, or biLSTM, is a sequence processing model that consis
 9. Explain BiGRU
 Ans: A Bidirectional GRU, or BiGRU, is a sequence processing model that consists of two GRUs. one taking the input in a forward direction, and the other in a backwards direction. It is a bidirectional recurrent neural network with only the input and forget gates.
 
-image.png
+
